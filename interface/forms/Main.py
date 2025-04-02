@@ -45,6 +45,9 @@ class MainForm(Ui_Form, QWidget):
         self.pushButton_8.clicked.connect(lambda _, FORM=self.r_marked_form: self.open_form(FORM))
 
     def open_form(self, form: QWidget):
+        '''
+        Открытие дочернего окна с калькулятором.
+        '''
         form.show()
         self.hide()
         
