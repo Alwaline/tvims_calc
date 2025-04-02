@@ -17,6 +17,7 @@ class ChildForm(QWidget):
         self.clear.clicked.connect(self.clear_all)
         self.clear.setShortcut(QKeySequence("Ctrl+d"))
         self.help.clicked.connect(self.show_help)
+        self.help.setShortcut(QKeySequence(Qt.Key.Key_F1))
 
     def close(self):
         self.parent.show()
