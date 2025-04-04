@@ -29,4 +29,4 @@ class PrWRepForm(ChildForm, Ui_Form):
         self.n_k.setFocus()
 
     def show_help(self):
-        QMessageBox.information(self, "Помощь", "Введите n целым числом. Введите n целых чисел через пробел. Требуется: n > 0")
+        QMessageBox.information(self, "Помощь", "Введите n целым числом. Введите k целых чисел через пробел. Требуется: n > 0; sum(n_k) = n")
