@@ -36,7 +36,7 @@ plt.axis("off")
 plt.savefig("interface/images/7.png", bbox_inches='tight', pad_inches=0.1, dpi=100)
 plt.close()
 
-plt.text(0.5, 0.5, r'$P(A) = \frac{C^k_m * C^{n-r}_{n-m}}{C^{k}_{n}}$', fontsize=24, ha='center', va='center')
+plt.text(0.5, 0.5, r'$P(A) = \frac{C^k_m * C^{k-r}_{n-m}}{C^{k}_{n}}$', fontsize=24, ha='center', va='center')
 plt.axis("off")
 plt.savefig("interface/images/8.png", bbox_inches='tight', pad_inches=0.1, dpi=100)
 plt.close()
