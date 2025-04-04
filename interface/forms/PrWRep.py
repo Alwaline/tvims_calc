@@ -12,11 +12,12 @@ class PrWRepForm(ChildForm, Ui_Form):
         self.formula.setPixmap(QPixmap("interface/images/4.png"))
 
     def calc(self):
-        if self.n_k.text():
+        if self.n.text() and self.n_k.text():
+            n = int(self.n.text())
             n_k = tuple(map(int, self.n_k.text().split()))
 
             try:
-                result = pr_w_rep(*n_k)
+                result = pr_w_rep(n, *n_k)
                 if int(result) == result:
                     self.result.setText(str(int(result)))
                 else: self.result.setText(str(result))
@@ -24,9 +25,10 @@ class PrWRepForm(ChildForm, Ui_Form):
                 QMessageBox.critical(self, "Ошибка", str(e))
 
     def clear_all(self):
+        self.n.clear()
         self.n_k.clear()
         self.result.clear()
-        self.n_k.setFocus()
+        self.n.setFocus()
 
     def show_help(self):
         QMessageBox.information(self, "Помощь", "Введите n целым числом. Введите k целых чисел через пробел. Требуется: n > 0; sum(n_k) = n")

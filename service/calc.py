@@ -44,7 +44,7 @@ def pl_w_rep(k: int, n: int) -> int:
     return n ** k
 
 
-def pr_w_rep(*args: int) -> float:
+def pr_w_rep(n: int,*args: int) -> float:
     '''
     Вычисляет количество перестановок k элементов из n с повторениями.
 
@@ -61,9 +61,8 @@ def pr_w_rep(*args: int) -> float:
         >>> pr_w_rep(2, 2, 2)
         0.5
     '''
-    n = sum(args)
     
-    if len(args) != n:
+    if sum(args) != n:
         raise ValueError('Сумма аргументов не равна их количеству')
     elif n < 0:
         raise ValueError('Некорректные данные. Требуется: n >= 0')
@@ -113,7 +112,7 @@ def cm_wo_rep(k: int, n: int) -> int:
         >>> cm_wo_rep(2, 5)
         10
     '''
-    if k > 0 and n > 0 and k > n:
+    if k <= 0 and n <= 0 and k > n:
         raise ValueError('Некорректные данные. Требуется: k > 0; n > 0; k <= n')
     return (factorial(n) / (factorial(k) * factorial(n - k)))
 
@@ -136,7 +135,7 @@ def cm_w_rep(k: int, n: int) -> int:
         >>> cm_w_rep(2, 5)
         15
     '''
-    if k > 0 and n > 0:
+    if k <= 0 and n <= 0:
         raise ValueError('Некорректные данные. Требуется: k > 0; n > 0')
     return cm_wo_rep(k, n + k - 1)
 
