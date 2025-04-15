@@ -184,8 +184,8 @@ def r_marked(r: int, k: int, m: int, n: int) -> float:
         >>> r_marked(1, 2, 5, 10)
         0.55 (5)
     '''
-    if k >= m or k - r > n - m or m > n:
-        raise ValueError('Некорректные данные. Требуется: k < m; k - r <= n - m; m <= n')
+    if k > m or k - r > n - m or m > n:
+        raise ValueError('Некорректные данные. Требуется: k <= m; k - r <= n - m; m <= n')
     return (cm_wo_rep(r, m) * cm_wo_rep(k - r, n - m) / cm_wo_rep(k, n))
 
 
